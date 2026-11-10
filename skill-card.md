@@ -1,6 +1,6 @@
 ## Description:
 
-Locked design-token baseline for Chinese Word/DOCX documents and WeChat-native article layouts, specifying 23/18/16 px typography, deep-blue headings, layout restrictions, conversion recovery, and verification checks for consistent editable output.
+Provides a consistent Chinese DOCX and WeChat article layout baseline, covering typography, heading colors, spacing, layout constraints, and conversion recovery.
 
 This skill is ready for commercial/non-commercial use.
 
@@ -14,7 +14,7 @@ MIT-0
 
 ## Use Case:
 
-Developers, content producers, and agents use this skill to typeset Chinese DOCX files or WeChat-native articles with a locked visual baseline, especially when html-to-docx conversion loses styles or fails on Windows.
+Developers and content creators use this skill to apply consistent Chinese typography and layout when preparing editable DOCX documents or WeChat-native articles. It also provides guidance for recovering from conversion failures and checking document styles.
 
 ### Deployment Geography for Use:
 
@@ -22,31 +22,27 @@ Global
 
 ## Known Risks and Mitigations:
 
-Risk: Unintentional baseline changes can make Chinese DOCX and WeChat article output inconsistent across documents.
+Risk: Changes to the shared baseline can affect future documents; malformed version metadata or unavailable conversion tools can cause errors or inconsistent formatting.
 
-Mitigation: Treat the 23/18/16 px sizes, #1a3a5c heading color, and WeChat layout constraints as locked tokens; change the skill intentionally before changing generated documents.
-
-Risk: DOCX conversion may lose styles or fail on Windows.
-
-Mitigation: Reopen and verify the DOCX for expected sizes, heading color, CJK rendering, and editability; use the documented recovery or programmatic rebuild path when conversion fails.
+Mitigation: Review shared-baseline edits, correct the extra quote in the source version field, and confirm conversion tools are available before use; follow the documented recovery workflow if conversion fails.
 
 ## Reference(s):
 
-- [ClawHub Skill Page](https://clawhub.ai/haiyangchenbj/skills/docx-chinese-baseline)
+- [ClawHub skill page](https://clawhub.ai/haiyangchenbj/skills/docx-chinese-baseline)
 
 ## Skill Output:
 
-**Output Type(s):** [Guidance, Configuration]
+**Output Type(s):** [Guidance, Configuration instructions, Files]
 
-**Output Format:** [Markdown/text guidance with conversion and verification checklist]
+**Output Format:** [Markdown report and editable DOCX document]
 
 **Output Parameters:** [1D]
 
-**Other Properties Related to Output:** [No executable code; output may include the chosen target style, conversion path, verification results, and output file path.]
+**Other Properties Related to Output:** [DOCX text remains editable; WeChat-native layouts follow the stated no-table and no-card constraints.]
 
 ## Skill Version(s):
 
-1.0.2 (source: frontmatter and server release evidence)
+1.0.3 (source: server-resolved release evidence)
 
 ## Ethical Considerations:
 
